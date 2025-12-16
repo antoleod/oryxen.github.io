@@ -1,4 +1,4 @@
-// ORYXEN TECH - Interacciones suaves y soporte multidioma
+// ORYXEN TECH — Interactions: navigation, reveal, contact form
 
 document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.getElementById('nav-menu');
@@ -6,62 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const navClose = document.getElementById('nav-close');
   const navLinks = document.querySelectorAll('.nav__link');
   const header = document.querySelector('.header');
-  const langButtons = document.querySelectorAll('.lang-button');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const getFromPath = (obj, path) => path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
-
-  const applyLanguage = (lang) => {
-    const dict = translations[lang] || translations.en;
-    document.documentElement.setAttribute('lang', lang);
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (dict.metaTitle) document.title = dict.metaTitle;
-    if (dict.metaDescription && metaDescription) metaDescription.setAttribute('content', dict.metaDescription);
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      const attr = el.dataset.i18nAttr;
-      const value = getFromPath(dict, key);
-      if (!value) return;
-      if (attr) {
-        el.setAttribute(attr, value);
-      } else {
-        el.textContent = value;
-      }
-    });
-
-    langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-
-    try {
-      localStorage.setItem('oryxen-lang', lang);
-    } catch (_) {
-      /* ignore storage errors */
-    }
-  };
-
-  const storedLang = (() => {
-    try { return localStorage.getItem('oryxen-lang'); } catch (_) { return null; }
-  })();
-  const defaultLang = translations[storedLang] ? storedLang : 'en';
-  applyLanguage(defaultLang);
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
-  });
 
   const closeMenu = () => navMenu && navMenu.classList.remove('show-menu');
 
-  if (navToggle) {
-    navToggle.addEventListener('click', () => navMenu && navMenu.classList.add('show-menu'));
-  }
-
-  if (navClose) {
-    navClose.addEventListener('click', closeMenu);
-  }
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
+  if (navToggle) navToggle.addEventListener('click', () => navMenu && navMenu.classList.add('show-menu'));
+  if (navClose) navClose.addEventListener('click', closeMenu);
+  navLinks.forEach(link => link.addEventListener('click', closeMenu));
 
   window.addEventListener('scroll', () => {
     if (!header) return;
@@ -78,68 +29,76 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!entry.isIntersecting) return;
       const id = entry.target.getAttribute('id');
       navLinks.forEach(link => {
-        link.classList.toggle('active-link', link.getAttribute('href').includes(id));
+        const isActive = link.getAttribute('href').includes(`#${id}`);
+        link.classList.toggle('active-link', isActive);
       });
     });
   }, { threshold: 0.45 });
-
   sections.forEach(section => navObserver.observe(section));
 
   const revealTargets = document.querySelectorAll('.section[data-reveal]');
-  if (prefersReducedMotion) {
+  if (!prefersReducedMotion) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+    revealTargets.forEach(el => revealObserver.observe(el));
+  } else {
     revealTargets.forEach(el => el.classList.add('visible'));
-    return;
   }
 
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
-
   const backToTopButton = document.querySelector('.back-to-top');
-
   if (backToTopButton) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 320) {
         backToTopButton.classList.add('visible');
       } else {
         backToTopButton.classList.remove('visible');
       }
     });
   }
+
   const form = document.querySelector('.contact__form');
   const formStatus = document.querySelector('.form-status');
-
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const action = form.getAttribute('action') || '';
       const data = new FormData(form);
+
+      if (action.startsWith('mailto:')) {
+        const to = action.replace('mailto:', '');
+        const name = data.get('name') || 'ORYXEN contact';
+        const email = data.get('email') || '';
+        const idea = data.get('idea') || '';
+        const subject = encodeURIComponent(`Project idea — ${name}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\n\nIdea:\n${idea}`
+        );
+        formStatus.textContent = 'Opening your email client...';
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+        return;
+      }
+
+      formStatus.textContent = 'Sending...';
       try {
-        const response = await fetch(form.action, {
+        const response = await fetch(action, {
           method: form.method,
           body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
+          headers: { 'Accept': 'application/json' }
         });
         if (response.ok) {
-          formStatus.textContent = 'Thanks for your message! I will get back to you soon.';
+          formStatus.textContent = 'Thank you. We will respond within one business day.';
           form.reset();
         } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              formStatus.textContent = data["errors"].map(error => error["message"]).join(", ")
-            } else {
-              formStatus.textContent = 'Oops! There was a problem submitting your form';
-            }
-          })
+          formStatus.textContent = 'We could not send the form. Please email contact@oryxen.tech.';
         }
       } catch (error) {
-        formStatus.textContent = 'Oops! There was a problem submitting your form';
+        formStatus.textContent = 'Connection issue. Please email contact@oryxen.tech.';
       }
     });
   }
