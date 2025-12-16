@@ -1,75 +1,157 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>ORYXEN — The Future of Applications</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="We design and build modern digital products: mobile apps, web platforms, and cloud solutions.">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Libraries -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORYXEN TECH - Quietly Engineering Bold Futures</title>
+    <meta name="description" content="Calm engineering for Modern Workplace and Cloud. Continuity, precision, and a human touch for European organizations." />
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 
-  <header data-aos="fade-down" data-aos-duration="1000">
-    <div class="logo">ORYXEN</div>
-    <nav>
-      <a href="pitch.html" class="nav-link" data-i18n="nav_pitch">Investors</a>
-      <div class="lang-switch">
-        <button class="lang-toggle active" data-lang="en">EN</button>
-        <span class="divider">/</span>
-        <button class="lang-toggle" data-lang="es">ES</button>
-      </div>
-    </nav>
-  </header>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#home" class="nav__logo" aria-label="ORYXEN TECH">ORYXEN TECH</a>
 
-  <main class="hero">
-    <div class="hero-content">
-      <span class="brand-tag" data-aos="fade-up">ORYXEN</span>
-      <h1 data-i18n="hero_title" data-aos="fade-up" data-aos-delay="100">The future of applications starts here.</h1>
-      <p class="subtitle" data-i18n="hero_subtitle" data-aos="fade-up" data-aos-delay="200">Empowering the future with
-        scalable digital solutions.</p>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link" data-i18n="nav.home">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link" data-i18n="nav.about">About</a></li>
+                    <li class="nav__item"><a href="#approach" class="nav__link" data-i18n="nav.approach">Approach</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link" data-i18n="nav.services">Services</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+                </ul>
 
-      <p class="description" data-i18n="hero_desc" data-aos="fade-up" data-aos-delay="300">
-        We design and build modern digital products: mobile apps, web platforms, and cloud solutions.
-        From concept to launch, ORYXEN builds technology for the future.
-      </p>
+                <div class="nav__close" id="nav-close" aria-label="Close menu" data-i18n="nav.close" data-i18n-attr="aria-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="currentColor"/></svg>
+                </div>
+            </div>
 
-      <div class="actions" data-aos="fade-up" data-aos-delay="400">
-        <a href="mailto:contact@oryxen.tech" class="btn primary" data-i18n="btn_start">Start your app project</a>
-        <a href="#contact" class="btn secondary" data-i18n="btn_contact">Contact ORYXEN</a>
-      </div>
-    </div>
-  </main>
+            <div class="nav__actions">
+                <div class="lang-switch" role="group" aria-label="Language selector">
+                    <button class="lang-button active" data-lang="en">EN</button>
+                    <button class="lang-button" data-lang="es">ES</button>
+                    <button class="lang-button" data-lang="fr">FR</button>
+                </div>
+                <div class="nav__toggle" id="nav-toggle" aria-label="Open menu" data-i18n="nav.open" data-i18n-attr="aria-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="currentColor"/></svg>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <section id="contact" class="contact" data-aos="fade-up">
-    <h2 data-i18n="contact_title">Get in touch</h2>
-    <p data-i18n="contact_desc">One single contact for all inquiries.</p>
+    <main class="main">
+        <section class="section home" id="home" data-reveal>
+            <div class="container">
+                <div class="hero__logo" aria-hidden="true">
+                    <img src="assets/oryxen-logo.png" alt="ORYXEN TECH logo">
+                </div>
+                <div class="hero__pill" data-i18n="hero.pill">Calm engineering, decisive outcomes</div>
+                <h1 class="section__title" data-i18n="hero.title">Quietly Engineering Bold Futures.</h1>
+                <p class="section__subtitle" data-i18n="hero.subtitle">Purposeful technology delivered with composure. I lead Modern Workplace and Cloud environments for European organizations that need continuity, precision, and a human touch.</p>
+                <div class="hero__meta">
+                    <span data-i18n="hero.meta1">+10 years in corporate IT</span>
+                    <span data-i18n="hero.meta2">Microsoft 365 | Azure | Windows</span>
+                    <span data-i18n="hero.meta3">Direct support for users and VIPs</span>
+                </div>
+                <div class="hero__cta">
+                    <a href="#services" class="button button--ghost" data-i18n="hero.ctaGhost">Services</a>
+                    <a href="#contact" class="button" data-i18n="hero.ctaPrimary">Direct contact</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Replace YOUR_FORM_ID with actual Formspree ID later -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" data-i18n="placeholder_name" placeholder="Your name" required />
-      <input type="email" name="email" data-i18n="placeholder_email" placeholder="Your email" required />
-      <textarea name="message" data-i18n="placeholder_message" placeholder="Your message" required></textarea>
-      <button type="submit" class="btn primary" data-i18n="btn_send">Send message</button>
-    </form>
+        <section class="section about" id="about" data-reveal>
+            <div class="container">
+                <h2 class="section__title" data-i18n="about.title">About</h2>
+                <p class="section__subtitle" data-i18n="about.subtitle">IT professional with over a decade sustaining critical operations. Specialist in Modern Workplace and Cloud, leading migrations, close support, and continuity for corporate and institutional environments. I work with composure, explain clearly, and ensure every technical decision serves the business.</p>
+                <div class="about__grid">
+                    <div class="about__item">
+                        <h3 data-i18n="about.item1.title">Modern Workplace</h3>
+                        <p data-i18n="about.item1.text">Microsoft 365 and Windows ecosystems with frictionless productivity, secure collaboration, and guided adoption.</p>
+                    </div>
+                    <div class="about__item">
+                        <h3 data-i18n="about.item2.title">Cloud & Continuity</h3>
+                        <p data-i18n="about.item2.text">Azure and hybrid infrastructure with resilience, governance, and observability that prevent surprises.</p>
+                    </div>
+                    <div class="about__item">
+                        <h3 data-i18n="about.item3.title">Executive Support</h3>
+                        <p data-i18n="about.item3.text">Direct care for end-users and VIPs, respecting time, privacy, and clear communication across languages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <p class="email-display" data-i18n="footer_email">contact@oryxen.tech</p>
-  </section>
+        <section class="section approach" id="approach" data-reveal>
+            <div class="container">
+                <h2 class="section__title" data-i18n="approach.title">Approach</h2>
+                <p class="section__subtitle" data-i18n="approach.subtitle">A measured, transparent rhythm that keeps teams calm and systems ready.</p>
+                <div class="approach__grid">
+                    <div class="approach-card">
+                        <h3 data-i18n="approach.item1.title">Measured pace</h3>
+                        <p data-i18n="approach.item1.text">Deliberate planning, no surprises. Every migration and rollout follows a clear, communicated path.</p>
+                    </div>
+                    <div class="approach-card">
+                        <h3 data-i18n="approach.item2.title">Continuity first</h3>
+                        <p data-i18n="approach.item2.text">Operations stay online. Contingency, governance, and monitoring are baked into each delivery.</p>
+                    </div>
+                    <div class="approach-card">
+                        <h3 data-i18n="approach.item3.title">Clear dialogue</h3>
+                        <p data-i18n="approach.item3.text">Direct communication with executives and teams, multilingual when needed, always concise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="locales.js"></script>
-  <script src="script.js"></script>
+        <section class="section services" id="services" data-reveal>
+            <div class="container">
+                <h2 class="section__title" data-i18n="services.title">Services</h2>
+                <p class="section__subtitle" data-i18n="services.subtitle">Discreet, effective solutions designed for continuity, security, and operational clarity.</p>
+                <div class="services__grid">
+                    <div class="service-card">
+                        <h3 class="service-card__title" data-i18n="services.item1.title">Modern Workplace</h3>
+                        <p class="service-card__description" data-i18n="services.item1.text">Design, deployment, and operation of Microsoft 365 and Windows environments with secure adoption and quiet support.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title" data-i18n="services.item2.title">Cloud & Continuity</h3>
+                        <p class="service-card__description" data-i18n="services.item2.text">Azure and hybrid architectures with contingency plans, governance, and observability that avoid surprises.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-card__title" data-i18n="services.item3.title">Executive Support</h3>
+                        <p class="service-card__description" data-i18n="services.item3.text">Dedicated care for key users and distributed teams. Fast response, clear communication, and absolute privacy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact" data-reveal>
+            <div class="container">
+                <h2 class="section__title" data-i18n="contact.title">Contact</h2>
+                <p class="section__subtitle" data-i18n="contact.subtitle">Let's discuss calmly what your organization needs now and how to keep it stable tomorrow.</p>
+                <form action="" class="contact__form" aria-label="Contact form">
+                    <div class="contact__group">
+                        <input type="text" class="contact__input" data-i18n="contact.name" data-i18n-attr="placeholder" placeholder="Your name" aria-label="Name">
+                        <input type="email" class="contact__input" data-i18n="contact.email" data-i18n-attr="placeholder" placeholder="Your email" aria-label="Email">
+                    </div>
+                    <textarea class="contact__input" data-i18n="contact.message" data-i18n-attr="placeholder" placeholder="Your message" aria-label="Message"></textarea>
+                    <button type="submit" class="contact__button" data-i18n="contact.button">Send message</button>
+                </form>
+                <a href="mailto:contact@oryxen.tech" class="contact__email-link">contact@oryxen.tech</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer.copy">(c) 2025 ORYXEN TECH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
-
 </html>
+
+
+
+
+
