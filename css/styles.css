@@ -129,17 +129,14 @@ img { max-width: 100%; display: block; }
 
 .hero__logo {
   width: 160px;
+  height: 160px;
   margin: 0 auto 1.5rem;
   filter: drop-shadow(0 18px 60px rgba(139, 180, 255, 0.25));
-  background: radial-gradient(circle at 30% 30%, rgba(139, 180, 255, 0.25), transparent 70%), rgba(18, 26, 37, 0.7);
+  background: url('../assets/oryxen-logo.svg') no-repeat center center;
+  background-size: contain;
   border: 1px solid rgba(139, 180, 255, 0.2);
   border-radius: 18px;
   overflow: hidden;
-}
-
-.hero__logo img {
-  border-radius: 18px;
-  border: 1px solid rgba(139, 180, 255, 0.2);
 }
 
 .hero__pill {
@@ -258,4 +255,28 @@ textarea.contact__input { min-height: 150px; resize: vertical; }
 @media screen and (min-width: 1024px) {
   .services__grid { grid-template-columns: repeat(3, 1fr); }
   .approach__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+  z-index: 100;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
 }
