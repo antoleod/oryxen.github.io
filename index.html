@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ORYXEN TECH — Quietly Engineering Bold Futures</title>
-  <meta name="description" content="ORYXEN TECH: tecnología con propósito y acompañamiento humano. Aplicaciones, web, soluciones digitales y asesoría técnica desde Bélgica para equipos europeos.">
+  <meta name="description" content="ORYXEN TECH: technology with purpose and human guidance. We build applications, websites, and digital solutions with calm precision.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,11 +19,11 @@
       </a>
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link">Overview</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#approach" class="nav__link">Our Approach</a></li>
-          <li class="nav__item"><a href="#create" class="nav__link">What We Create</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="#home" class="nav__link" data-i18n="nav.overview">Overview</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link" data-i18n="nav.about">About</a></li>
+          <li class="nav__item"><a href="#approach" class="nav__link" data-i18n="nav.approach">Our Approach</a></li>
+          <li class="nav__item"><a href="#create" class="nav__link" data-i18n="nav.create">What We Create</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
         </ul>
         <div class="nav__close" id="nav-close" aria-label="Close menu">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -33,7 +33,12 @@
         </div>
       </div>
       <div class="nav__actions">
-        <a class="nav__cta" href="#contact">Tell us your idea</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang__btn active" data-lang="en">EN</button>
+          <button class="lang__btn" data-lang="fr">FR</button>
+          <button class="lang__btn" data-lang="es">ES</button>
+        </div>
+        <a class="nav__cta" href="#contact" data-i18n="nav.cta">Tell us your idea</a>
         <div class="nav__toggle" id="nav-toggle" aria-label="Open menu">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
             <path fill="none" d="M0 0h24v24H0z"/>
@@ -48,29 +53,29 @@
     <section class="section hero" id="home" data-reveal>
       <div class="container hero__grid">
         <div class="hero__content">
-          <div class="hero__eyebrow">Quietly Engineering Bold Futures.</div>
-          <h1 class="hero__title">Technology with purpose, delivered with calm precision.</h1>
-          <p class="hero__subtitle">ORYXEN TECH escucha, diseña y construye soluciones digitales para equipos que necesitan claridad y continuidad. Más de 10 años en Bélgica y Europa, acompañando a líderes técnicos y no técnicos con un trato humano.</p>
+          <div class="hero__eyebrow" data-i18n="hero.eyebrow">Quietly Engineering Bold Futures.</div>
+          <h1 class="hero__title" data-i18n="hero.title">Technology with purpose, delivered with calm precision.</h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">ORYXEN TECH listens, designs, and builds digital solutions for teams that need clarity and continuity. Over 10 years in Belgium and Europe, supporting technical and non-technical leaders with a human touch.</p>
           <div class="hero__stats">
             <div class="stat">
-              <p class="stat__label">Experience</p>
-              <p class="stat__value">10+ years</p>
-              <p class="stat__hint">IT specialist in EU corporate environments.</p>
+              <p class="stat__label" data-i18n="hero.stat1.label">Experience</p>
+              <p class="stat__value" data-i18n="hero.stat1.value">10+ years</p>
+              <p class="stat__hint" data-i18n="hero.stat1.hint">IT specialist in EU corporate environments.</p>
             </div>
             <div class="stat">
-              <p class="stat__label">Stack</p>
-              <p class="stat__value">M365 · Azure · Intune</p>
-              <p class="stat__hint">Windows 10/11, AD, ServiceNow, process optimization.</p>
+              <p class="stat__label" data-i18n="hero.stat2.label">Stack</p>
+              <p class="stat__value" data-i18n="hero.stat2.value">M365 · Azure · Intune</p>
+              <p class="stat__hint" data-i18n="hero.stat2.hint">Windows 10/11, AD, ServiceNow, process optimization.</p>
             </div>
             <div class="stat">
-              <p class="stat__label">Approach</p>
-              <p class="stat__value">Human, calm</p>
-              <p class="stat__hint">We listen first, then build together.</p>
+              <p class="stat__label" data-i18n="hero.stat3.label">Approach</p>
+              <p class="stat__value" data-i18n="hero.stat3.value">Human, calm</p>
+              <p class="stat__hint" data-i18n="hero.stat3.hint">We listen first, then build together.</p>
             </div>
           </div>
           <div class="hero__actions">
-            <a href="#contact" class="button">Tell us your idea</a>
-            <a href="#contact" class="button button--ghost">Let’s build it together</a>
+            <a href="#contact" class="button" data-i18n="hero.cta.primary">Tell us your idea</a>
+            <a href="#contact" class="button button--ghost" data-i18n="hero.cta.secondary">Let’s build it together</a>
           </div>
         </div>
         <div class="hero__panel" aria-label="ORYXEN TECH logo and promise">
@@ -80,16 +85,16 @@
             </div>
             <div>
               <p class="hero__brand-name">ORYXEN TECH</p>
-              <p class="hero__brand-tag">Calm, precise, human.</p>
+              <p class="hero__brand-tag" data-i18n="hero.brand">Calm, precise, human.</p>
             </div>
           </div>
           <div class="panel__copy">
-            <p class="panel__line">“Share your idea. We translate it into a roadmap, then build with care.”</p>
-            <p class="panel__line">No noise. No rush. Just engineering that respects people and time.</p>
+            <p class="panel__line" data-i18n="hero.panel.line1">“Share your idea. We translate it into a roadmap, then build with care.”</p>
+            <p class="panel__line" data-i18n="hero.panel.line2">No noise. No rush. Just engineering that respects people and time.</p>
           </div>
           <div class="panel__footer">
             <span class="status-dot" aria-hidden="true"></span>
-            <p class="panel__status">Available for EU-based collaborations.</p>
+            <p class="panel__status" data-i18n="hero.panel.status">Available for EU-based collaborations.</p>
           </div>
         </div>
       </div>
@@ -98,22 +103,22 @@
     <section class="section about" id="about" data-reveal>
       <div class="container narrow">
         <div class="section__header">
-          <p class="section__eyebrow">About / Who We Are</p>
-          <h2 class="section__title">Engineering with purpose, grounded in real-world operations.</h2>
-          <p class="section__subtitle">We operate at the intersection of technology and people. Every engagement starts with listening, translating needs into a calm plan, and staying close until the solution is stable and understood by everyone involved.</p>
+          <p class="section__eyebrow" data-i18n="about.eyebrow">About / Who We Are</p>
+          <h2 class="section__title" data-i18n="about.title">Engineering with purpose, grounded in real-world operations.</h2>
+          <p class="section__subtitle" data-i18n="about.subtitle">We operate at the intersection of technology and people. Every engagement starts with listening, translating needs into a calm plan, and staying close until the solution is stable and understood by everyone involved.</p>
         </div>
         <div class="about__grid">
           <div class="about__card">
-            <h3>Human and consultative</h3>
-            <p>We keep the language clear, guide decisions, and make space for leaders to think. Technical or not, you always know what is happening and why.</p>
+            <h3 data-i18n="about.card1.title">Human and consultative</h3>
+            <p data-i18n="about.card1.text">We keep the language clear, guide decisions, and make space for leaders to think. Technical or not, you always know what is happening and why.</p>
           </div>
           <div class="about__card">
-            <h3>European experience</h3>
-            <p>Based in Belgium, experienced across EU corporate and institutional environments with governance, privacy, and continuity at the center.</p>
+            <h3 data-i18n="about.card2.title">European experience</h3>
+            <p data-i18n="about.card2.text">Based in Belgium, experienced across EU corporate and institutional environments with governance, privacy, and continuity at the center.</p>
           </div>
           <div class="about__card">
-            <h3>10+ years in the field</h3>
-            <p>Applications, web platforms, ServiceNow optimization, Microsoft 365, Azure, Intune, Windows 10/11, and Active Directory.</p>
+            <h3 data-i18n="about.card3.title">10+ years in the field</h3>
+            <p data-i18n="about.card3.text">Applications, web platforms, ServiceNow optimization, Microsoft 365, Azure, Intune, Windows 10/11, and Active Directory.</p>
           </div>
         </div>
       </div>
@@ -122,44 +127,44 @@
     <section class="section approach" id="approach" data-reveal>
       <div class="container">
         <div class="section__header">
-          <p class="section__eyebrow">Our Approach</p>
-          <h2 class="section__title">A calm, transparent path from idea to long-term support.</h2>
-          <p class="section__subtitle">No need to arrive with the perfect brief. We shape it together, then build and support it with steady hands.</p>
+          <p class="section__eyebrow" data-i18n="approach.eyebrow">Our Approach</p>
+          <h2 class="section__title" data-i18n="approach.title">A calm, transparent path from idea to long-term support.</h2>
+          <p class="section__subtitle" data-i18n="approach.subtitle">No need to arrive with the perfect brief. We shape it together, then build and support it with steady hands.</p>
         </div>
         <div class="approach__steps">
           <div class="step">
             <span class="step__badge">01</span>
             <div>
-              <p class="step__title">You share your idea</p>
-              <p class="step__text">We listen, capture context, and surface constraints early.</p>
+              <p class="step__title" data-i18n="approach.step1.title">You share your idea</p>
+              <p class="step__text" data-i18n="approach.step1.text">We listen, capture context, and surface constraints early.</p>
             </div>
           </div>
           <div class="step">
             <span class="step__badge">02</span>
             <div>
-              <p class="step__title">We listen &amp; advise</p>
-              <p class="step__text">Clear guidance on feasibility, options, and risks.</p>
+              <p class="step__title" data-i18n="approach.step2.title">We listen &amp; advise</p>
+              <p class="step__text" data-i18n="approach.step2.text">Clear guidance on feasibility, options, and risks.</p>
             </div>
           </div>
           <div class="step">
             <span class="step__badge">03</span>
             <div>
-              <p class="step__title">We design together</p>
-              <p class="step__text">Co-create the blueprint so every stakeholder is aligned.</p>
+              <p class="step__title" data-i18n="approach.step3.title">We design together</p>
+              <p class="step__text" data-i18n="approach.step3.text">Co-create the blueprint so every stakeholder is aligned.</p>
             </div>
           </div>
           <div class="step">
             <span class="step__badge">04</span>
             <div>
-              <p class="step__title">We build with care</p>
-              <p class="step__text">Iterative delivery with documentation and calm communication.</p>
+              <p class="step__title" data-i18n="approach.step4.title">We build with care</p>
+              <p class="step__text" data-i18n="approach.step4.text">Iterative delivery with documentation and calm communication.</p>
             </div>
           </div>
           <div class="step">
             <span class="step__badge">05</span>
             <div>
-              <p class="step__title">We support long-term</p>
-              <p class="step__text">Runbooks, training, and responsive support to keep it steady.</p>
+              <p class="step__title" data-i18n="approach.step5.title">We support long-term</p>
+              <p class="step__text" data-i18n="approach.step5.text">Runbooks, training, and responsive support to keep it steady.</p>
             </div>
           </div>
         </div>
@@ -169,30 +174,30 @@
     <section class="section create" id="create" data-reveal>
       <div class="container">
         <div class="section__header">
-          <p class="section__eyebrow">What We Create</p>
-          <h2 class="section__title">Digital products and platforms that stay reliable.</h2>
-          <p class="section__subtitle">From first sketch to live operations, we build quietly and keep you informed.</p>
+          <p class="section__eyebrow" data-i18n="create.eyebrow">What We Create</p>
+          <h2 class="section__title" data-i18n="create.title">Digital products and platforms that stay reliable.</h2>
+          <p class="section__subtitle" data-i18n="create.subtitle">From first sketch to live operations, we build quietly and keep you informed.</p>
         </div>
         <div class="cards">
           <div class="card">
-            <h3>Application development</h3>
-            <p>Web and mobile applications built with governance, security, and user clarity from day one.</p>
+            <h3 data-i18n="create.card1.title">Application development</h3>
+            <p data-i18n="create.card1.text">Web and mobile applications built with governance, security, and user clarity from day one.</p>
           </div>
           <div class="card">
-            <h3>Website creation</h3>
-            <p>Premium sites that explain complex value simply, ready for multilingual European audiences.</p>
+            <h3 data-i18n="create.card2.title">Website creation</h3>
+            <p data-i18n="create.card2.text">Premium sites that explain complex value simply, ready for multilingual European audiences.</p>
           </div>
           <div class="card">
-            <h3>MVP &amp; idea validation</h3>
-            <p>Rapid prototypes to test ideas, gather feedback, and de-risk investment before full build.</p>
+            <h3 data-i18n="create.card3.title">MVP &amp; idea validation</h3>
+            <p data-i18n="create.card3.text">Rapid prototypes to test ideas, gather feedback, and de-risk investment before full build.</p>
           </div>
           <div class="card">
-            <h3>Technical consulting</h3>
-            <p>Architecture, governance, Microsoft 365, Azure, Intune, Windows 10/11, AD, and ServiceNow optimization.</p>
+            <h3 data-i18n="create.card4.title">Technical consulting</h3>
+            <p data-i18n="create.card4.text">Architecture, governance, Microsoft 365, Azure, Intune, Windows 10/11, AD, and ServiceNow optimization.</p>
           </div>
           <div class="card">
-            <h3>Long-term support</h3>
-            <p>Calm operations, documentation, and direct access to engineers who speak plainly.</p>
+            <h3 data-i18n="create.card5.title">Long-term support</h3>
+            <p data-i18n="create.card5.text">Calm operations, documentation, and direct access to engineers who speak plainly.</p>
           </div>
         </div>
       </div>
@@ -201,20 +206,20 @@
     <section class="section contact" id="contact" data-reveal>
       <div class="container narrow">
         <div class="section__header">
-          <p class="section__eyebrow">Contact</p>
-          <h2 class="section__title">Tell us your idea. We will listen, advise, and build it with you.</h2>
-          <p class="section__subtitle">No need for a perfect brief. Share where you are and what you want to achieve. We respond within one business day.</p>
+          <p class="section__eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 class="section__title" data-i18n="contact.title">Tell us your idea. We will listen, advise, and build it with you.</h2>
+          <p class="section__subtitle" data-i18n="contact.subtitle">No need for a perfect brief. Share where you are and what you want to achieve. We respond within one business day.</p>
         </div>
         <form action="mailto:contact@oryxen.tech" method="POST" class="contact__form" aria-label="Contact form">
           <div class="contact__group">
             <label class="sr-only" for="name">Name</label>
-            <input type="text" id="name" name="name" class="contact__input" placeholder="Name" required>
+            <input type="text" id="name" name="name" class="contact__input" placeholder="Name" required data-i18n-placeholder="contact.form.name">
             <label class="sr-only" for="email">Email</label>
-            <input type="email" id="email" name="email" class="contact__input" placeholder="Email" required>
+            <input type="email" id="email" name="email" class="contact__input" placeholder="Email" required data-i18n-placeholder="contact.form.email">
           </div>
           <label class="sr-only" for="idea">Tell us about your idea</label>
-          <textarea id="idea" name="idea" class="contact__input" placeholder="Tell us about your idea" required></textarea>
-          <button type="submit" class="contact__button button">Send message</button>
+          <textarea id="idea" name="idea" class="contact__input" placeholder="Tell us about your idea" required data-i18n-placeholder="contact.form.idea"></textarea>
+          <button type="submit" class="contact__button button" data-i18n="contact.form.submit">Send message</button>
         </form>
         <p class="form-status" role="status" aria-live="polite"></p>
         <a href="mailto:contact@oryxen.tech" class="contact__email-link">contact@oryxen.tech</a>
@@ -231,9 +236,9 @@
 
   <footer class="footer">
     <div class="container footer__grid">
-      <p>ORYXEN TECH — Quietly Engineering Bold Futures.</p>
+      <p data-i18n="footer.line1">ORYXEN TECH — Quietly Engineering Bold Futures.</p>
       <a href="mailto:contact@oryxen.tech" class="footer__email">contact@oryxen.tech</a>
-      <p class="footer__note">Technology with purpose. Calm support for bold ideas.</p>
+      <p class="footer__note" data-i18n="footer.note">Technology with purpose. Calm support for bold ideas.</p>
     </div>
   </footer>
 

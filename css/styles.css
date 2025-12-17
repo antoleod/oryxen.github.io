@@ -75,6 +75,32 @@ ul { list-style: none; }
 }
 .nav__cta:hover { border-color: var(--accent); color: var(--accent); }
 
+.lang-switch {
+  display: inline-flex;
+  gap: 0.2rem;
+  padding: 0.2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(15,22,36,0.6);
+}
+.lang__btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+.lang__btn.active {
+  background: rgba(140,198,255,0.12);
+  color: var(--accent-strong);
+  border: 1px solid rgba(140,198,255,0.4);
+}
+.lang__btn:hover { color: var(--accent); }
+
 .nav__toggle, .nav__close { display: flex; cursor: pointer; color: var(--text); }
 .nav__menu {
   position: fixed;
